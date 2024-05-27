@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     
     func setupRaccoonImageView() {
         raccoonImageView.translatesAutoresizingMaskIntoConstraints = false
-        raccoonImageView.image = UIImage(named: "raccoonImage") // Replace "raccoonImage" with the actual image name
+        raccoonImageView.image = UIImage(named: "raccoonImage")
         view.addSubview(raccoonImageView)
         
         NSLayoutConstraint.activate([
