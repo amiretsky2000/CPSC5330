@@ -1,1 +1,40 @@
+import UIKit
+
+class ViewController: UIViewController {
+    let raccoonImageView = UIImageView()
+    let snackLabel = UILabel()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .lightGray
+        
+        setupRaccoonImageView()
+        setupSnackLabel()
+    }
+    
+    func setupRaccoonImageView() {
+        raccoonImageView.translatesAutoresizingMaskIntoConstraints = false
+        raccoonImageView.image = UIImage(named: "raccoonImage") // Replace "raccoonImage" with the actual image name
+        view.addSubview(raccoonImageView)
+        
+        NSLayoutConstraint.activate([
+            raccoonImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            raccoonImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -50), // Adjust positioning as needed
+            raccoonImageView.widthAnchor.constraint(equalToConstant: 200), // Set as required
+            raccoonImageView.heightAnchor.constraint(equalToConstant: 200) // Set as required
+        ])
+    }
+    
+    func setupSnackLabel() {
+        snackLabel.translatesAutoresizingMaskIntoConstraints = false
+        snackLabel.text = "Racc needs a snack"
+        snackLabel.textAlignment = .center
+        view.addSubview(snackLabel)
+        
+        NSLayoutConstraint.activate([
+            snackLabel.topAnchor.constraint(equalTo: raccoonImageView.bottomAnchor, constant: 10),
+            snackLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
+    }
+}
 
